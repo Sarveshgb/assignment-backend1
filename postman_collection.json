@@ -1,0 +1,320 @@
+{
+    "info": {
+        "name": "Sports Travel Package API",
+        "description": "Complete API collection for Sports Travel Package Platform",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "variable": [
+        {
+            "key": "base_url",
+            "value": "http://localhost:3000/api",
+            "type": "string"
+        }
+    ],
+    "item": [
+        {
+            "name": "Health Check",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:3000/health",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000",
+                    "path": [
+                        "health"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Leads",
+            "item": [
+                {
+                    "name": "Create Lead",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"john.doe@example.com\",\n  \"phone\": \"1234567890\",\n  \"message\": \"Interested in F1 Japan package for 2 people\",\n  \"event_id\": 1\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/leads",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "leads"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Get All Leads",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/leads?page=1&limit=10",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "leads"
+                            ],
+                            "query": [
+                                {
+                                    "key": "page",
+                                    "value": "1"
+                                },
+                                {
+                                    "key": "limit",
+                                    "value": "10"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Get Leads by Status",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/leads?status=New",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "leads"
+                            ],
+                            "query": [
+                                {
+                                    "key": "status",
+                                    "value": "New"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Get Leads by Event",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/leads?event_id=1",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "leads"
+                            ],
+                            "query": [
+                                {
+                                    "key": "event_id",
+                                    "value": "1"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Get Leads by Month",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/leads?month=6",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "leads"
+                            ],
+                            "query": [
+                                {
+                                    "key": "month",
+                                    "value": "6"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Get Single Lead",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/leads/1",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "leads",
+                                "1"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Update Lead Status",
+                    "request": {
+                        "method": "PATCH",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"status\": \"Contacted\",\n  \"notes\": \"Initial phone call completed\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/leads/1/status",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "leads",
+                                "1",
+                                "status"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Events",
+            "item": [
+                {
+                    "name": "Get All Events",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/events",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "events"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Get Single Event",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/events/1",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "events",
+                                "1"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Get Event Packages",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/events/1/packages",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "events",
+                                "1",
+                                "packages"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Quotes",
+            "item": [
+                {
+                    "name": "Generate Quote",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"lead_id\": 1,\n  \"package_id\": 1,\n  \"travelers\": 4,\n  \"travel_date\": \"2025-06-01\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/quotes/generate",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "quotes",
+                                "generate"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Get All Quotes",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/quotes",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "quotes"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Get Single Quote",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/quotes/1",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "quotes",
+                                "1"
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

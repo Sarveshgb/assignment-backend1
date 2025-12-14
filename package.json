@@ -1,0 +1,36 @@
+{
+    "name": "sports-travel-backend",
+    "version": "1.0.0",
+    "description": "Backend API for Sports Travel Package Platform",
+    "main": "src/server.js",
+    "type": "module",
+    "scripts": {
+        "start": "node src/server.js",
+        "dev": "nodemon src/server.js",
+        "migrate": "node src/database/migrate.js",
+        "seed": "node src/database/seed.js",
+        "reset": "node src/database/reset.js"
+    },
+    "keywords": [
+        "sports",
+        "travel",
+        "api",
+        "nodejs"
+    ],
+    "author": "",
+    "license": "MIT",
+    "dependencies": {
+        "better-sqlite3": "^12.5.0",
+        "cors": "^2.8.5",
+        "date-fns": "^3.0.6",
+        "dotenv": "^16.3.1",
+        "express": "^4.18.2",
+        "joi": "^17.11.0",
+        "mongodb": "^6.21.0",
+        "mongoose": "^8.20.2",
+        "pg": "^8.11.3"
+    },
+    "devDependencies": {
+        "nodemon": "^3.0.2"
+    }
+}
